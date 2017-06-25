@@ -73,11 +73,11 @@ guit2 = np.maximum((0.8*-1), guit2)
 BASS = fft_(bass)
 win = np.zeros(BASS.size)
 W0 = 0
-W1 = int(1/(fs/2)*BASS.size)
+W1 = int(1/(fs/4)*BASS.size)
 win[W0:W1] = 1
 BASS_win = np.multiply(BASS,win)
-bassf = ifft_(DUET_win)
-bassf = np.asarray(bass, dtype=np.int16)
+bass = ifft_(DUET_win)
+bass = np.asarray(bass, dtype=np.int16)
 
 #==============================================================================
 #mixagem estereo
